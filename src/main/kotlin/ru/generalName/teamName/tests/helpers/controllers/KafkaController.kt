@@ -1,4 +1,4 @@
-package ru.samokat.mysamokat.tests.helpers.controllers
+package ru.generalName.teamName.tests.helpers.controllers
 
 
 import com.fasterxml.jackson.databind.node.ObjectNode

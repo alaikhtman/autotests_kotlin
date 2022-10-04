@@ -1,4 +1,4 @@
-package ru.samokat.mysamokat.tests.checkers
+package ru.generalName.teamName.tests.checkers
 
 import io.qameta.allure.Step
 import org.assertj.core.api.SoftAssertions

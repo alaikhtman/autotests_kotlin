@@ -1,32 +1,12 @@
-package ru.samokat.mysamokat.tests.dataproviders.preconditions
+package ru.generalName.teamName.tests.dataproviders.preconditions
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Scope
 import org.springframework.stereotype.Component
-import ru.samokat.employeeprofiles.api.common.domain.EmployeeVehicleType
-import ru.samokat.employeeprofiles.api.common.domain.StaffPartnerType
-import ru.samokat.employeeprofiles.api.common.domain.Vehicle
-import ru.samokat.employeeprofiles.api.profiles.create.CreateProfileRequest
-import ru.samokat.employeeprofiles.api.profiles.create.CreatedProfileView
-import ru.samokat.my.domain.PhoneNumber
-import ru.samokat.my.domain.employee.EmployeeName
-import ru.samokat.my.domain.employee.EmployeeRole
-import ru.samokat.my.domain.shifts.ShiftAssignmentCancellationReason
-import ru.samokat.my.domain.shifts.TimeRange
-import ru.samokat.my.rest.api.enum.ApiEnum
-import ru.samokat.mysamokat.tests.dataproviders.Constants
-import ru.samokat.mysamokat.tests.dataproviders.StringAndPhoneNumberGenerator
-import ru.samokat.mysamokat.tests.dataproviders.dataClasses.staffApiGTW.oauth.OAuthTokenView
-import ru.samokat.mysamokat.tests.helpers.actions.EmployeeActions
-import ru.samokat.mysamokat.tests.helpers.actions.ShiftsActions
-import ru.samokat.mysamokat.tests.helpers.actions.StaffApiGWActions
-import ru.samokat.mysamokat.tests.helpers.controllers.database.ApigatewayDatabaseController
-import ru.samokat.mysamokat.tests.helpers.controllers.database.ShiftsDatabaseController
-import ru.samokat.shifts.api.activeshifts.ActiveShiftView
-import ru.samokat.shifts.api.assignments.storebatch.StoredShiftAssignmentsBatchView
-import ru.samokat.shifts.api.common.domain.AssigneeRole
-import ru.samokat.shifts.api.common.domain.DeliveryMethod
-import ru.samokat.shifts.api.common.domain.ShiftUserRole
+import ru.generalName.teamName.tests.dataproviders.dataClasses.apiGTW.oauth.OAuthTokenView
+import ru.generalName.teamName.tests.helpers.actions.ProfileActions
+import ru.generalName.teamName.tests.helpers.actions.ApiGWActions
+import ru.generalName.teamName.tests.helpers.controllers.database.ApigatewayDatabaseController
 import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalTime
@@ -37,18 +17,18 @@ import java.util.*
 @Scope("prototype")
 class CommonPreconditions {
 
-    private var employeePreconditions: EmployeePreconditions = EmployeePreconditions()
+    private var employeePreconditions: ProfilePreconditions = ProfilePreconditions()
     private var shiftsPreconditions: ShiftsPreconditions = ShiftsPreconditions()
-    private var staffApiGWPreconditions: StaffApiGWPreconditions = StaffApiGWPreconditions()
+    private var apiGWPreconditions: ApiGWPreconditions = ApiGWPreconditions()
 
     @Autowired
-    private lateinit var employeeActions: EmployeeActions
+    private lateinit var profileActions: ProfileActions
 
     @Autowired
     private lateinit var shiftsActions: ShiftsActions
 
     @Autowired
-    private lateinit var staffApiGWActions: StaffApiGWActions
+    private lateinit var apiGWActions: ApiGWActions
 
     @Autowired
     private lateinit var shiftDatabaseController: ShiftsDatabaseController
@@ -107,7 +87,7 @@ class CommonPreconditions {
                 requisitionId = requisitionId,
                 cityId = cityId
             )
-        profileResult = employeeActions.createProfileFullResult(createRequest)
+        profileResult = profileActions.createProfileFullResult(createRequest)
         return profileResult
     }
 
@@ -562,11 +542,11 @@ class CommonPreconditions {
                 supervisedDarkstores = supervisedDarkstores,
                 cityId = cityId
             )
-        staffApiGWPreconditions.fillAuthRequest(
+        apiGWPreconditions.fillAuthRequest(
             mobile = Constants.mobile1.asStringWithPlus(),
             password = profile.generatedPassword!!
         )
-        return staffApiGWActions.authProfilePassword(staffApiGWPreconditions.oAuthTokenRequest())
+        return apiGWActions.authProfilePassword(apiGWPreconditions.oAuthTokenRequest())
 
     }
 
@@ -577,7 +557,7 @@ class CommonPreconditions {
         type: StaffPartnerType = StaffPartnerType.OUT_STAFF
     ): UUID {
         val request = employeePreconditions.fillCreatePartnerRequest(title, shortTitle, ApiEnum(type))
-        return employeeActions.createStaffPartner(request).partnerId
+        return profileActions.createStaffPartner(request).partnerId
     }
 
 }

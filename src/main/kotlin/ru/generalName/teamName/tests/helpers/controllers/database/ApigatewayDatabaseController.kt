@@ -1,11 +1,9 @@
-package ru.samokat.mysamokat.tests.helpers.controllers.database
+package ru.generalName.teamName.tests.helpers.controllers.database
 
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.springframework.stereotype.Service
-import ru.samokat.mysamokat.tests.dataproviders.helpers.database.apigateway.Task
-import ru.samokat.mysamokat.tests.dataproviders.helpers.database.employee_profiles_backend.Profile
 import java.util.*
 
 @Service

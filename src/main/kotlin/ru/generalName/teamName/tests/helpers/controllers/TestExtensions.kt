@@ -1,8 +1,7 @@
-package ru.samokat.mysamokat.tests.helpers.controllers
+package ru.generalName.teamName.tests.helpers.controllers
 
 import org.junit.jupiter.api.Assertions
-import ru.samokat.my.rest.api.error.RestError
-import ru.samokat.my.rest.client.RestResult
+
 
 fun <R : Any> RestResult<R, *>.asSuccess(): R {
     return when (this) {

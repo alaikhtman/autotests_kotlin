@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwczovL3NhbW9rYXQucnUiLCJzdWIiOiIzNWE3NzA2Ni1hYjMxLTRkMzItOTg2Zi03YWVhNWU3OGUyZDciLCJzY29wZSI6WyJkYXJrc3RvcmVfYWRtaW4iXSwiZXhwIjoxNjQ5OTM5NTUwLCJpYXQiOjE2NDk5MzkyNTAsInVzZXIiOnsidXNlcklkIjoiMzVhNzcwNjYtYWIzMS00ZDMyLTk4NmYtN2FlYTVlNzhlMmQ3IiwidXNlclR5cGUiOiIifSwianRpIjoiNjcyNDA2IiwiY2xpZW50X2lkIjoibXlfc2Ftb2thdCJ9.oI-zxgacIOfzgHphizzmKdAp_-klgZPsBh-2EijbaJylNNvHdPpk1K9sR6vv9nuzrqBGjzv-EEcRymq84uelrE-68ni-IQqzFCmSxupjPv6asRO9MnIQQ-e-uaTzyanmhgIrI36U22pzE_OeXNIym0MqlhkGJTZU4ZMtCACrGK0",
+      "refreshToken": "df59f1a28611b667ac69fde5813a2496a62c852e5d461ebe63a1e1f3d28c61e0",
+      "expiresIn": "PT5M"
+    }
+  ],
+  "required": [
+    "accessToken",
+    "refreshToken",
+    "expiresIn"
+  ],
+  "properties": {
+    "accessToken": {
+      "$id": "#/properties/accessToken",
+      "type": "string",
+      "title": "The accessToken schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwczovL3NhbW9rYXQucnUiLCJzdWIiOiIzNWE3NzA2Ni1hYjMxLTRkMzItOTg2Zi03YWVhNWU3OGUyZDciLCJzY29wZSI6WyJkYXJrc3RvcmVfYWRtaW4iXSwiZXhwIjoxNjQ5OTM5NTUwLCJpYXQiOjE2NDk5MzkyNTAsInVzZXIiOnsidXNlcklkIjoiMzVhNzcwNjYtYWIzMS00ZDMyLTk4NmYtN2FlYTVlNzhlMmQ3IiwidXNlclR5cGUiOiIifSwianRpIjoiNjcyNDA2IiwiY2xpZW50X2lkIjoibXlfc2Ftb2thdCJ9.oI-zxgacIOfzgHphizzmKdAp_-klgZPsBh-2EijbaJylNNvHdPpk1K9sR6vv9nuzrqBGjzv-EEcRymq84uelrE-68ni-IQqzFCmSxupjPv6asRO9MnIQQ-e-uaTzyanmhgIrI36U22pzE_OeXNIym0MqlhkGJTZU4ZMtCACrGK0"
+      ]
+    },
+    "refreshToken": {
+      "$id": "#/properties/refreshToken",
+      "type": "string",
+      "title": "The refreshToken schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "df59f1a28611b667ac69fde5813a2496a62c852e5d461ebe63a1e1f3d28c61e0"
+      ]
+    },
+    "expiresIn": {
+      "$id": "#/properties/expiresIn",
+      "type": "string",
+      "title": "The expiresIn schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "PT5M"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

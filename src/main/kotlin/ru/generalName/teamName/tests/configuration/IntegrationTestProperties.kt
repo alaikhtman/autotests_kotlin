@@ -1,4 +1,4 @@
-package ru.samokat.mysamokat.tests.configuration
+package ru.generalName.teamName.tests.configuration
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.ConstructorBinding
@@ -32,26 +32,10 @@ data class KafkaConfigurationProperties(
 )
 
 data class ConsumerTopics(
-    val employeeLog: String,
-    val employeeCreated: String,
-    val employeeChanged: String,
-    val employeeDisabled: String,
-    val employeePassChanged: String,
-    val activeShiftsLog: String,
-    val shiftAssignmentLog: String,
-    val firstShiftsSchedule: String,
-    val employeeFirstLoginConsume: String,
-    val billedTimeslot: String
+    val test: String
 )
 
 data class ProducerTopics(
-    val employeeCreated: String,
-    val priemNaRabotuCFZ: String,
-    val priemNaRabotuSpiskomCFZ: String,
-    val kadrovyyPerevodCFZ: String,
-    val kadrovyyPerevodSpiskomCFZ: String,
-    val vneshnieSotrudniki: String,
-    val employeeFirstLogin: String,
-    val billedTimeslotError: String
+    val test: String
 
 )

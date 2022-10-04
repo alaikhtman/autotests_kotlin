@@ -1,4 +1,4 @@
-package ru.samokat.mysamokat.tests.dataproviders
+package ru.generalName.teamName.tests.dataproviders
 
 import java.util.concurrent.ThreadLocalRandom
 import kotlin.random.Random

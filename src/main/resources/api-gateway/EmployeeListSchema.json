@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "users": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "mobile": {
+              "type": "string"
+            },
+            "name": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "middleName": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "middleName"
+              ]
+            },
+            "darkstore": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "timezone": {
+                  "type": "string"
+                },
+                "cityCode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "timezone",
+                "cityCode"
+              ]
+            },
+            "roles": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "comment": {
+              "type": "string"
+            },
+            "vehicle": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ]
+            },
+            "staffers": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "userId": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "isIntern": {
+                      "type": "boolean"
+                    },
+                    "version": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "userId",
+                    "role",
+                    "state",
+                    "isIntern",
+                    "version"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "userId": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "isIntern": {
+                      "type": "boolean"
+                    },
+                    "version": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "userId",
+                    "role",
+                    "state",
+                    "isIntern",
+                    "version"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "mobile",
+            "name",
+            "darkstore",
+            "roles",
+            "staffers"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "users"
+  ]
+}

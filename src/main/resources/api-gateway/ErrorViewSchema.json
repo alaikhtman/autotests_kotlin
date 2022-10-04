@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "required": [
+    "message",
+    "code"
+  ],
+  "properties": {
+    "message": {
+      "$id": "#/properties/message",
+      "type": "string"
+    },
+    "parameter": {
+      "$id": "#/properties/parameter",
+      "type": "string"
+    },
+    "code": {
+      "$id": "#/properties/code",
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

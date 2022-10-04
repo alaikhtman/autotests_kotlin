@@ -1,0 +1,296 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "mobile": "+78005553535",
+      "name": {
+        "firstName": "Иван",
+        "lastName": "Иванов",
+        "middleName": "Иванович"
+      },
+      "darkstore": {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "title": "СПБ Ткачей 15",
+        "timezone": "Europe/Moscow",
+        "cityCode": "SPB"
+      },
+      "roles": [
+        "darkstore_admin"
+      ],
+      "supervisedDarkstores": [
+        {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "title": "СПБ Ткачей 15",
+          "timezone": "Europe/Moscow",
+          "cityCode": "SPB"
+        }
+      ]
+    }
+  ],
+  "required": [
+    "id",
+    "mobile",
+    "name",
+    "roles"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The id schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      ]
+    },
+    "mobile": {
+      "$id": "#/properties/mobile",
+      "type": "string",
+      "title": "The mobile schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "+78005553535"
+      ]
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "object",
+      "title": "The name schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "firstName": "Иван",
+          "lastName": "Иванов",
+          "middleName": "Иванович"
+        }
+      ],
+      "required": [
+        "firstName",
+        "lastName",
+        "middleName"
+      ],
+      "properties": {
+        "firstName": {
+          "$id": "#/properties/name/properties/firstName",
+          "type": "string",
+          "title": "The firstName schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Иван"
+          ]
+        },
+        "lastName": {
+          "$id": "#/properties/name/properties/lastName",
+          "type": "string",
+          "title": "The lastName schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Иванов"
+          ]
+        },
+        "middleName": {
+          "$id": "#/properties/name/properties/middleName",
+          "type": "string",
+          "title": "The middleName schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Иванович"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "darkstore": {
+      "$id": "#/properties/darkstore",
+      "type": "object",
+      "title": "The darkstore schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "title": "СПБ Ткачей 15",
+          "timezone": "Europe/Moscow",
+          "cityCode": "SPB"
+        }
+      ],
+      "required": [
+        "id",
+        "title",
+        "timezone",
+        "cityCode"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/darkstore/properties/id",
+          "type": "string",
+          "title": "The id schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          ]
+        },
+        "title": {
+          "$id": "#/properties/darkstore/properties/title",
+          "type": "string",
+          "title": "The title schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "СПБ Ткачей 15"
+          ]
+        },
+        "timezone": {
+          "$id": "#/properties/darkstore/properties/timezone",
+          "type": "string",
+          "title": "The timezone schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Europe/Moscow"
+          ]
+        },
+        "cityCode": {
+          "$id": "#/properties/darkstore/properties/cityCode",
+          "type": "string",
+          "title": "The cityCode schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "SPB"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "roles": {
+      "$id": "#/properties/roles",
+      "type": "array",
+      "title": "The roles schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          "darkstore_admin"
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/roles/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/roles/items/anyOf/0",
+            "type": "string",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "darkstore_admin"
+            ]
+          }
+        ]
+      }
+    },
+    "supervisedDarkstores": {
+      "$id": "#/properties/supervisedDarkstores",
+      "type": "array",
+      "title": "The supervisedDarkstores schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "title": "СПБ Ткачей 15",
+            "timezone": "Europe/Moscow",
+            "cityCode": "SPB"
+          }
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/supervisedDarkstores/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/supervisedDarkstores/items/anyOf/0",
+            "type": "object",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+              {
+                "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                "title": "СПБ Ткачей 15",
+                "timezone": "Europe/Moscow",
+                "cityCode": "SPB"
+              }
+            ],
+            "required": [
+              "id",
+              "title",
+              "timezone",
+              "cityCode"
+            ],
+            "properties": {
+              "id": {
+                "$id": "#/properties/supervisedDarkstores/items/anyOf/0/properties/id",
+                "type": "string",
+                "title": "The id schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+                ]
+              },
+              "title": {
+                "$id": "#/properties/supervisedDarkstores/items/anyOf/0/properties/title",
+                "type": "string",
+                "title": "The title schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "СПБ Ткачей 15"
+                ]
+              },
+              "timezone": {
+                "$id": "#/properties/supervisedDarkstores/items/anyOf/0/properties/timezone",
+                "type": "string",
+                "title": "The timezone schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "Europe/Moscow"
+                ]
+              },
+              "cityCode": {
+                "$id": "#/properties/supervisedDarkstores/items/anyOf/0/properties/cityCode",
+                "type": "string",
+                "title": "The cityCode schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "SPB"
+                ]
+              }
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}

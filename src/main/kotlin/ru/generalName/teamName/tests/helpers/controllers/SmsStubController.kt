@@ -1,19 +1,12 @@
-package ru.samokat.mysamokat.tests.helpers.controllers
+package ru.generalName.teamName.tests.helpers.controllers
 
 import io.restassured.RestAssured
 import io.restassured.builder.RequestSpecBuilder
 import io.restassured.filter.log.LogDetail
 import io.restassured.http.ContentType
 import org.springframework.stereotype.Service
-import ru.samokat.my.domain.PhoneNumber
-import ru.samokat.mysamokat.apigateway.api.common.domain.OAuthTokenView
-import ru.samokat.mysamokat.apigateway.api.oauth.token.GetOAuthTokenRequest
-import ru.samokat.mysamokat.tests.SuiteBase
-import ru.samokat.mysamokat.tests.dataproviders.SmscStubMessage
-import ru.samokat.mysamokat.tests.endpoints.StubSmsEndPoint
-import ru.samokat.mysamokat.tests.endpoints.configuration.NetConfig
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+
 import com.fasterxml.jackson.module.kotlin.*
 
 @Service

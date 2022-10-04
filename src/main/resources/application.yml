@@ -1,0 +1,120 @@
+services:
+  settings:
+    employee-profiles:
+      url: ${employee_url}
+    shifts:
+      url: ${shifts_url}
+    tips:
+       url: ${tips_url}
+    employee-schedule:
+      url: ${employee_schedule_url}
+    my-samokat-apigw:
+      url: ${my_samokat_apigw}
+    staff-metadata:
+      url: ${staff_metadata_url}
+    hrp-map:
+      url: ${hrp_map_url}
+    staff-cave-apigw:
+      url: ${staff_cave_apigw_url}
+    staff-apigw:
+        url: ${staff_apigw}
+
+configuration:
+  rest:
+    employee-profiles:
+      url: ${employee_url}
+      port: 443
+    employee-schedule:
+      url: ${employee_schedule_url}
+      port: 443
+    shifts:
+      url: ${shifts_url}
+      port: 443
+    tips:
+      url: ${tips_url}
+      port: 443
+    my-samokat-apigw:
+      url: ${my_samokat_apigw}
+      port: 443
+    staff-metadata:
+      url: ${staff_metadata_url}
+      port: 443
+    staff-apigw:
+      url: ${staff_apigw}
+      port: 443
+    stub-controller:
+      url: "https://stub-smsc-integration.samokat.io"
+      port: 443
+    hrp-map:
+        url: ${hrp_map_url}
+        port: 443
+    staff-cave-apigw:
+      url: ${staff_cave_apigw_url}
+      port: 443
+  database:
+    employee:
+      url: jdbc:pgsql://10.32.66.31/employee_profiles_backend
+      user: ${emp_db_user}
+      password: ${emp_db_password}
+    employee-schedule:
+      url: jdbc:pgsql://10.32.66.31/employee_profiles_schedule
+      user: ${emp_db_user}
+      password: ${emp_db_password}
+    shifts:
+      url: jdbc:pgsql://10.32.66.31/shifts
+      user: ${shifts_db_user}
+      password: ${shifts_db_password}
+    apigateway:
+      url: jdbc:pgsql://10.32.66.31/apigateway
+      user: ${apigateway_db_user}
+      password: ${apigateway_db_password}
+    tips:
+      url: jdbc:pgsql://10.32.66.31/tips
+      user: ${tips_db_user}
+      password: ${tips_db_password}
+    staff-metadata:
+      url: jdbc:pgsql://10.32.66.31/staff_metadata
+      user: ${staff_metadata_db_user}
+      password: ${staff_metadata_db_password}
+    push:
+      url: jdbc:pgsql://10.32.66.31/push
+      user: ${push_db_user}
+      password: ${push_db_password}
+    employee-statistics:
+      url: jdbc:pgsql://10.32.66.31/employee_profiles_statistics
+      user: ${emp_db_user}
+      password: ${emp_db_password}
+    hrp-map:
+      url: jdbc:pgsql://10.32.66.31/hrp_map
+      user: ${hrp_map_db_user}
+      password: ${hrp_map_db_password}
+
+  kafka:
+    release:
+      urls:
+        - os-012066020.samokat.io:9092
+        - os-012066021.samokat.io:9092
+        - os-012066022.samokat.io:9092
+      consumerTopics:
+        employeeLog: employee_profiles_log
+        employeeCreated: employeeprofiles_profile_created
+        employeeChanged: employeeprofiles_profile_changed
+        employeeDisabled: employeeprofiles_profile_disabled
+        employeePassChanged: employeeprofiles_profile_password_changed
+        activeShiftsLog: active_shifts_log
+        shiftAssignmentLog: shift_assignments_log
+        firstShiftsSchedule: first_shift_schedule
+        billedTimeslot: events.stf.sr.IskhDannyeTabUchetaRabVremVneshnSotr
+        employeeFirstLoginConsume: employeeprofiles_first_login
+      producerTopics:
+        employeeLog: employee_profiles_log
+        employeeCreated: employeeprofiles_profile_created
+        priemNaRabotuCFZ: events.zup.sr.PriemNaRabotuCFZ
+        priemNaRabotuSpiskomCFZ: events.zup.sr.PriemNaRabotuSpiskomCFZ
+        kadrovyyPerevodCFZ: events.zup.sr.KadrovyyPerevodCFZ
+        kadrovyyPerevodSpiskomCFZ: events.zup.sr.KadrovyyPerevodSpiskomCFZ
+        vneshnieSotrudniki: events.stf.sr.VneshnieSotrudniki
+        employeeFirstLogin: employeeprofiles_first_login
+        billedTimeslotError: events.stf.sr.check_IskhDTabUchRabVremVneshnSotr
+
+

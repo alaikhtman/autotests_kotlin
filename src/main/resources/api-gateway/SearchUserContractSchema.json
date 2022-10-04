@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "usersContracts": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "accountingContractId": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "retirementDate": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "accountingContractId",
+                "title"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "usersContracts"
+  ]
+}
